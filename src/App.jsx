@@ -14,7 +14,7 @@ import Popular from "./components/Popular.jsx";
 import JoinToday from "./components/JoinToday.jsx";
 
 import SearchPage from "./components/SearchPage.jsx";
-import SignUp from "./components/signUp.jsx";
+// import SignUp from "./components/signUp.jsx";
 export default function App() {
   const [selected, setSelected] = useState("movie");
   const handleClick = (type) => {
@@ -41,10 +41,10 @@ export default function App() {
       path: "Login",
       element: <Login />,
     },
-    {
-      path: "SignUp",
-      element: <SignUp />,
-    },
+    // {
+    //   path: "SignUp",
+    //   element: <SignUp />,
+    // },
     {
       path: `/${selected}/:id`,
       element: (
