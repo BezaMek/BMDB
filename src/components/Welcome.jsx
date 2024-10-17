@@ -1,5 +1,4 @@
 import tmdbLogo from "../assetes/tmdb.png";
-import fastFurious from "../assetes/";
 import Blue from "../assetes/Blue.jpg";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
