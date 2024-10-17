@@ -8,14 +8,14 @@ import Login from "./components/Login.jsx";
 import Welcome from "./components/Welcome.jsx";
 import Trending from "./components/Trending.jsx";
 import MovieDetail from "./components/Movie/MovieDetail.jsx";
- import Trailer from "./components/Trailer.jsx";
+ 
  
 import LeaderBord from "./components/LeaderBord.jsx";
 import Footer from "./components/Footer.jsx";
-import Button from "./components/Button.jsx";
+
 import Popular from "./components/Popular.jsx";
 import JoinToday from "./components/JoinToday.jsx";
-import Fetch from "./components/Fetch.jsx";
+
 import SearchPage from "./components/SearchPage.jsx";
 import SignUp from "./components/signUp.jsx";
 export default function App() {
