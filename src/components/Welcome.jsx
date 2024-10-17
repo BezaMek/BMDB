@@ -1,16 +1,16 @@
 import tmdbLogo from "../assetes/tmdb.png";
-import fastFurious from "../assetes/fast_furiou1.jpg";
+import fastFurious from "../assetes/";
 import Blue from "../assetes/Blue.jpg";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 export default function Welcome() {
-  const[newRandomImg,setNewRandomImg]= useState(null);
+  const [newRandomImg, setNewRandomImg] = useState(null);
   const Images = [tmdbLogo, Blue];
 
-  useEffect(()=>{
-      const randomImages = Images[Math.floor(Math.random() * Images.length)];
-      setNewRandomImg(randomImages);
-  },[])
+  useEffect(() => {
+    const randomImages = Images[Math.floor(Math.random() * Images.length)];
+    setNewRandomImg(randomImages);
+  }, []);
   const divStyle = {
     backgroundImage: `url(${newRandomImg})`,
     backgroundSize: "cover",

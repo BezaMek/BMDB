@@ -1,5 +1,5 @@
 import { useState,useEffect} from "react";
-import Fast from "../assetes/fast_furiou1.jpg";
+
 import Popular from "./Popular";
 import Button from "./Button";
 import TrailerCard from "./TrailerCard.jsx"

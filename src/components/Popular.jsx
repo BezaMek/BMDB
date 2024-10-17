@@ -1,5 +1,5 @@
 import { useState, useEffect} from "react";
-import fastFur from "../assetes/fast_furiou1.jpg";
+
 import insideOut from "../assetes/inside_out.jpg";
 import the100 from "../assetes/the100.jpg";
 import { Link } from "react-router-dom";

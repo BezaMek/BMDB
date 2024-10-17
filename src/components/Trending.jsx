@@ -1,8 +1,5 @@
 import { useState, useEffect } from "react";
-import Fast from "../assetes/fast_furiou1.jpg";
-import fastFur from "../assetes/fast_furiou1.jpg";
-import insideOut from "../assetes/inside_out.jpg";
-import the100 from "../assetes/the100.jpg";
+
 import freQuency from "../assetes/trending-bg-39afc2a5f77e31d469b25c187814c0a2efef225494c038098d62317d923f8415.svg";
 import { Link } from "react-router-dom";
 import Button from "./Button";

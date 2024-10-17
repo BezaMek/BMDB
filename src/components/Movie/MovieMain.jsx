@@ -1,4 +1,4 @@
-import Fast from "/Users/PC/Documents/Movie_Proj/my-project/src/assetes/fast_furiou1.jpg";
+
 import { useState, useEffect } from "react";
 export default function MovieMain({ movie }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
