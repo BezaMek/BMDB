@@ -1,6 +1,5 @@
 import Card from "../Card.jsx";
 import { Link } from "react-router-dom";
-import LongArrow from "/Users/PC/Documents/Movie_Proj/my-project/src/svg/long_arrow.svg";
 export default function MovieCast({ movie}) {
 
   //     Imgs: Dylan,
