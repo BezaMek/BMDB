@@ -8,9 +8,11 @@ export default function Welcome() {
   const Images = [tmdbLogo, Blue];
 
   useEffect(() => {
-    const randomImages = Images[Math.floor(Math.random() * Images.length)];
-    setNewRandomImg(randomImages);
-  }, []);
+    if (Images && Images.length > 0) {
+      const randomImage = Images[Math.floor(Math.random() * Images.length)];
+      setNewRandomImg(randomImage);
+    }
+  }, [Images]); 
   const divStyle = {
     backgroundImage: `url(${newRandomImg})`,
     backgroundSize: "cover",
