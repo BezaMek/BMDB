@@ -4,14 +4,11 @@ import freQuency from "../assetes/trending-bg-39afc2a5f77e31d469b25c187814c0a2ef
 import { Link } from "react-router-dom";
 import Button from "./Button";
 export default function Trending() {
-  const [selcted, setSelected] = useState(null);
-  const [showDropDown, setShowDropDown] = useState(false);
+ 
+  
 
-  const handClick = (type) => {
-    setSelected((prevType) => (prevType === type ? null : type));
-    setShowDropDown(false);
-  };
-  // const movieList = [
+ 
+ 
   //   {
   //     title: "Movie 1",
   //     thumbnail: ,
@@ -127,69 +124,7 @@ export default function Trending() {
 
   return (
     <div>
-      {/* <div className="flex m-5">
-        <h1 className="font-semibold text-2xl">Trending</h1>
-        <div className="pl-5 flex items-center space-x-2">
-          <div className="sm:flex sm:border sm:border-black sm:w-44 sm:h-7 sm:justify-between  sm:bg-white border border-green-400 bg-green-400 w-28 h-8 rounded-full">
-            <button
-            
-         
     
-              className={`${
-                selcted === "today"
-                  ? "sm:bg-black sm:border sm:border-black sm:min-w-20 text-sm sm:text-green-400 rounded-full"
-                  : ""
-              }`}
-              onClick={() => handClick("today")}
-            >
-              
-              <div className="relative">
-                <span className="pl-2 text-sm flex items-center">
-                  Today
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="size-6 ml-1 sm:hidden block"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m19.5 8.25-7.5 7.5-7.5-7.5"
-                    />
-                  </svg>
-                </span>
-              </div>
-            </button>
-         
-            {selcted === "today" && (
-              <button
-                className="sm:hidden block border border-green-400 text-sm bg-green-400 w-28 h-8 pr-7  rounded-full"
-                onClick={() => {
-                  handClick("Week");
-                }}
-              >
-                Week
-              </button>
-            )}
-         
-            <button
-              className={`${
-                selcted === "Week"
-                  ? "sm:bg-black sm:border-black sm:min-w-20  sm:text-green-400 sm:text-center rounded-full"
-                  : ""
-              }`}
-              onClick={() => handClick("Week")}
-            >
-              <span className="text-sm text-center hidden sm:block pr-1">
-                This Week
-              </span>
-            </button>
-          </div>
-        </div>
-      </div> */}
       <Button
         PageName="Trending"
         Button1="Today"
