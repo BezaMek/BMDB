@@ -5,14 +5,14 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 export default function Welcome() {
   const [newRandomImg, setNewRandomImg] = useState(null);
-  const Images = [tmdbLogo, Blue];
 
   useEffect(() => {
-    if (Images && Images.length > 0) {
-      const randomImage = Images[Math.floor(Math.random() * Images.length)];
+    const images = [tmdbLogo, Blue];
+    if (images && images.length > 0) {
+      const randomImage = images[Math.floor(Math.random() * images.length)];
       setNewRandomImg(randomImage);
     }
-  }, [Images]); 
+  }, []);
   const divStyle = {
     backgroundImage: `url(${newRandomImg})`,
     backgroundSize: "cover",
