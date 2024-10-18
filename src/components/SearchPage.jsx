@@ -1,7 +1,6 @@
 import Header from "./Header";
 import PageResult from "./SearchPageResult.jsx";
 import Footer from "./Footer.jsx"
-import FastFur from "../assetes/imgg.webp";
 import { useSearchParams } from 'react-router-dom';
 import { useState,useEffect } from "react";
 import { Link } from "react-router-dom";

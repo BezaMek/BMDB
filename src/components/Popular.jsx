@@ -1,59 +1,6 @@
 import { useState, useEffect} from "react";
-
-import insideOut from "../assetes/inside_out.jpg";
-import the100 from "../assetes/the100.jpg";
 import { Link } from "react-router-dom";
 export default function Popular(){
-    // const movieList = [
-    //     {
-    //       title: "Movie 1",
-    //       thumbnail: fastFur,
-    //       rating: 80,
-    //       releast_date: "12/12/2024",
-    //     },
-    //     {
-    //       title: "Movie 1",
-    //       thumbnail: insideOut,
-    //       rating: 80,
-    //       releast_date: "12/12/2024",
-    //     },
-    //     {
-    //       title: "Movie 1",
-    //       thumbnail: the100,
-    //       rating: 80,
-    //       releast_date: "12/12/2024",
-    //     },
-    //     {
-    //       title: "Movie 1",
-    //       thumbnail: insideOut,
-    //       rating: 80,
-    //       releast_date: "12/12/2024",
-    //     },
-    //     {
-    //       title: "Movie 1",
-    //       thumbnail: insideOut,
-    //       rating: 80,
-    //       releast_date: "12/12/2024",
-    //     },
-    //     {
-    //       title: "Movie 1",
-    //       thumbnail: insideOut,
-    //       rating: 80,
-    //       releast_date: "12/12/2024",
-    //     },
-    //     {
-    //       title: "Movie 1",
-    //       thumbnail: insideOut,
-    //       rating: 80,
-    //       releast_date: "12/12/2024",
-    //     },
-    //     {
-    //       title: "Movie 1",
-    //       thumbnail: insideOut,
-    //       rating: 80,
-    //       releast_date: "12/12/2024",
-    //     }
-    //   ];
     const [movieList, setMovieList] = useState([]);
    
 

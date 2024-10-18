@@ -1,4 +1,3 @@
-import FastFur from "../assetes/imgg.webp";
 export default function PageResult({
   MovieName,
   NativeNamw,
