@@ -25,9 +25,15 @@ export default function SignUp (){
             </div>
             <p>By clicking the "Sign up" button below, I certify that I have read and agree to the TMDB terms of use and privacy policy.</p>
             <div className="pt-5">
-                <Link to="/">
-                <button type="submit" className="border border-blue-500 w-auto p-2 bg-blue-700 font-bold text-sm text-white rounded">SignUp</button>
-            <a href="" className="pl-2 text-blue-500">Cancel</a>  </Link>
+          
+<Link to="/SignUp">
+  <button className="border border-blue-500 w-auto p-2 bg-blue-700 font-bold text-sm text-white rounded">
+    Sign Up
+  </button>
+</Link>
+
+<a href="/" className="pl-2 text-blue-500">Cancel</a>
+
             </div>
           
             </form> 

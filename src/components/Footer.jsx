@@ -14,29 +14,23 @@ export default function Footer(){
                </Link>
                <div className="p-5 sm:p-2 flex flex-col">
                 <h1 className="font-bold text-white">The Basics</h1>
-                <a href=""className="text-white">About TMDB</a>
-               <a href=""className="text-white">Contact Us</a>
-                <a  href="" className="text-white">Support Forums</a>
+                <a href="/" className="text-white">About TMDB</a>
+               <a href="/" className="text-white">Contact Us</a>
+                <a  href="/"  className="text-white">Support Forums</a>
                </div>
                <div className="p-5 sm:p-2 flex flex-col">
                 <h1 className="text-white font-bold">Get Involved</h1>
-                <a href="" className="text-white">Contribution Bible</a>
-                 <a href=""className="text-white">Add New Movie</a>
-                 <a href="" className="text-white">Add New TV Show</a>
+                <a href="/" className="text-white">Contribution Bible</a>
+                 <a href="/" className="text-white">Add New Movie</a>
+                 <a href="/" className="text-white">Add New TV Show</a>
                </div>
                <div className="p-5 sm:p-2 flex flex-col">
                 <h1 className="text-white font-bold">Community</h1>
-                <a href=""className="text-white">Guidelines</a>
-                <a href=""className="text-white">Discussion</a>
-                <a href=""className="text-white">Leaderboard</a>
+                <a href="/" className="text-white">Guidelines</a>
+                <a href="/" className="text-white">Discussion</a>
+                <a href="/" className="text-white">Leaderboard</a>
                </div>
-               {/* <div className="p-5">
-                <h1>Legal</h1>
-                <p>Terms of Use</p>
-                <p>API Terms of Use</p>
-                <p>Privacy Policy</p>
-                <p>DMCA Policy</p>
-               </div> */}
+                
                </div>
               
             </div>

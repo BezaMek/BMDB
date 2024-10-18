@@ -1,6 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Header from "./components/Header.jsx";
 import Login from "./components/Login.jsx";
 import Welcome from "./components/Welcome.jsx";

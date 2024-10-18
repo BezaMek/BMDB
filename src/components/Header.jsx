@@ -48,7 +48,7 @@ setOneVisible(!oneVisible);
     <Link to="/">
       <div className="flex items-center space-x-2">
     
-      <a className="text-blue-500 text-2xl font-bold">TMDB</a>
+      <a href="/" className="text-blue-500 text-2xl font-bold">TMDB</a>
     <div className="w-16 h-5 border-2 border-blue-500 bg-blue-500  rounded-full"></div>
    
      </div>
@@ -141,7 +141,7 @@ setOneVisible(!oneVisible);
 <Link to="/Login">
  
  
- <a href="" className="font-medium text-lg text-white">Login</a>
+ <a href="/" className="font-medium text-lg text-white">Login</a>
  
 </Link>
     <div className="w-full m-0">
@@ -178,7 +178,7 @@ setOneVisible(!oneVisible);
 <Link to="/Login">
  
  
- <a href="" className="text-white font-semibold text-lg">Login</a>
+ <a href="/" className="text-white font-semibold text-lg">Login</a>
  
 </Link>
 <Search/>

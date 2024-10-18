@@ -6,13 +6,10 @@ import Footer from "../Footer.jsx";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-export default function MovieDetail({selected}) {
+export default function MovieDetail({ selected }) {
   const [movie, setMovie] = useState(null);
-  const { id } = useParams();
- 
 
- 
- 
+  const { id } = useParams();
 
   useEffect(() => {
     fetch(
@@ -28,15 +25,15 @@ export default function MovieDetail({selected}) {
       .then((response) => response.json())
       .then((data) => setMovie(data || null))
       .catch((err) => console.log(err));
-  }, []);
+  }, [id]);
   // console.log(movie.credits);
   return (
     <div>
-      <Header/>
+      <Header />
       <MovieHeader />
-      <MovieMain movie={movie}/>
+      <MovieMain movie={movie} />
 
-      <MovieCast movie={movie}/>
+      <MovieCast movie={movie} />
 
       <Footer />
     </div>

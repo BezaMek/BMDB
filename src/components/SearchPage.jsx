@@ -20,7 +20,7 @@ export default function SearchPage() {
       .then((response) => response.json())
       .then((data) => setMovieList(data.results || []))
       .catch((err) => console.log(err));
-  }, []);
+  }, [query,selection]);
   const handleClick = (value) => {
     if(value){
       setSelection(value);

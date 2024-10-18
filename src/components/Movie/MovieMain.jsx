@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from "react";
+import { useState} from "react";
 export default function MovieMain({ movie }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [openTrailer, setIsOpenTrailer] = useState(false);

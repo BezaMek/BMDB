@@ -12,16 +12,18 @@ export default function Hamburger(){
 </svg>
  {clickMenu&&(
     <div className="fixed flex flex-col w-2/3 h-full p-5 bg-blue-950 bg-opacity-90 z-50">
-    <div className="flex flex-col">         <a href=""  className="text-white font-bold">Movies</a>
- <a href="" className="text-white font-bold">TV shows</a>
- <a href=""className="text-white font-bold">People</a>
+    <div className="flex flex-col">      
+   <a href="/"  className="text-white font-bold">Movies</a>
+ <a href="/" className="text-white font-bold">TV shows</a>
+ <a href="/" className="text-white font-bold">People</a>
  </div>
-    <div className="flex flex-col pt-5"> <a href=""className="text-slate-300 font-medium text-sm">Contribution Bible</a>
- <a href="" className="text-slate-300 font-medium text-sm">Disscussions</a>
- <a href=""  className="text-slate-300 font-medium text-sm">Leaderboard</a>
- <a href="" className="text-slate-300 font-medium text-sm">API</a>
- <a href=""  className="text-slate-300 font-medium text-sm">Support</a>
- <a href=""  className="text-slate-300 font-medium text-sm">About</a></div>
+    <div className="flex flex-col pt-5"> 
+ <a href="/" className="text-slate-300 font-medium text-sm">Contribution Bible</a>
+ <a href="/" className="text-slate-300 font-medium text-sm">Disscussions</a>
+ <a href="/"  className="text-slate-300 font-medium text-sm">Leaderboard</a>
+ <a href="/" className="text-slate-300 font-medium text-sm">API</a>
+ <a href="/"  className="text-slate-300 font-medium text-sm">Support</a>
+ <a href="/"  className="text-slate-300 font-medium text-sm">About</a></div>
 
         
    <span className="pt-5 text-slate-300 font-medium text-sm" >Log out</span>

@@ -5,83 +5,6 @@ import { Link } from "react-router-dom";
 import Button from "./Button";
 export default function Trending() {
  
-  
-
- 
- 
-  //   {
-  //     title: "Movie 1",
-  //     thumbnail: ,
-  //     rating: 80,
-  //     releast_date: "12/12/2024",
-  //   },
-  //   {
-  //     title: "Movie 1",
-  //     thumbnail: insideOut,
-  //     rating: 80,
-  //     releast_date: "12/12/2024",
-  //   },
-  //   {
-  //     title: "Movie 1",
-  //     thumbnail: the100,
-  //     rating: 80,
-  //     releast_date: "12/12/2024",
-  //   },
-  //   {
-  //     title: "Movie 1",
-  //     thumbnail: insideOut,
-  //     rating: 80,
-  //     releast_date: "12/12/2024",
-  //   },
-  //   {
-  //     title: "Movie 1",
-  //     thumbnail: insideOut,
-  //     rating: 80,
-  //     releast_date: "12/12/2024",
-  //   },
-  //   {
-  //     title: "Movie 1",
-  //     thumbnail: insideOut,
-  //     rating: 80,
-  //     releast_date: "12/12/2024",
-  //   },
-  //   {
-  //     title: "Movie 1",
-  //     thumbnail: insideOut,
-  //     rating: 80,
-  //     releast_date: "12/12/2024",
-  //   },
-  //   {
-  //     title: "Movie 1",
-  //     thumbnail: insideOut,
-  //     rating: 80,
-  //     releast_date: "12/12/2024",
-  //   },
-  //   {
-  //     title: "Movie 1",
-  //     thumbnail: insideOut,
-  //     rating: 80,
-  //     releast_date: "12/12/2024",
-  //   },
-  //   {
-  //     title: "Movie 1",
-  //     thumbnail: insideOut,
-  //     rating: 80,
-  //     releast_date: "12/12/2024",
-  //   },
-  //   {
-  //     title: "Movie 1",
-  //     thumbnail: insideOut,
-  //     rating: 80,
-  //     releast_date: "12/12/2024",
-  //   },
-  //   {
-  //     title: "Movie 1",
-  //     thumbnail: insideOut,
-  //     rating: 80,
-  //     releast_date: "12/12/2024",
-  //   },
-  // ];
   const [movieList, setMovieList] = useState([]);
   const [selection, setSelection] = useState("day");
 
@@ -99,7 +22,7 @@ export default function Trending() {
       .then((response) => response.json())
       .then((data) => setMovieList(data.results || []))
       .catch((err) => console.log(err));
-  }, []);
+  }, [selection]);
 
   const handleSelectionClick = (value) => {
     if (value) {
@@ -124,7 +47,6 @@ export default function Trending() {
 
   return (
     <div>
-    
       <Button
         PageName="Trending"
         Button1="Today"
