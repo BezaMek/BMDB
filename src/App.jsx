@@ -15,6 +15,8 @@ import JoinToday from "./components/JoinToday.jsx";
 
 import SearchPage from "./components/SearchPage.jsx";
 import SignUp from "./components/SignUp.jsx";
+import "./App.css";
+
 export default function App() {
   const [selected, setSelected] = useState("movie");
   const handleClick = (type) => {
