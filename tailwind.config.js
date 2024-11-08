@@ -2,7 +2,11 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Arial', 'ui-sans-serif', 'system-ui', 'Helvetica', 'sans-serif'],
+      },
+    },
   },
   plugins: [
     // require('tailwind-scrollbar'),

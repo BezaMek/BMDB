@@ -26,7 +26,7 @@ export default function Button({
           <div className={ButtonProperties}>
             {/* "flex gap-1 border border-black rounded-full font-medium" */}
             <button
-              className={`rounded-full min-w-24 p-1 ${
+              className={`rounded-full min-w-24 p-1 font-sans ${
                 selection === "day" ? ButtonColor : ButtonColor1
               }`}
               // "bg-black text-green-400"
@@ -49,7 +49,7 @@ export default function Button({
           </div>
         </div>
 
-        <div className="relative sm:hidden block font-medium">
+        <div className="relative sm:hidden block font-medium font-sans">
           <button
             className={`flex justify-between items-center gap-3 min-w-32 bg-gray-800  text-green-300 rounded-full px-5 py-1 ml-5 active:border-blue-600
    ${selection === "day" ? "" : ""}`}
@@ -105,7 +105,7 @@ export default function Button({
                 )}
               </button>
               <button
-                className={`flex items-center justify-between rounded-md px-5 py-1 text-left ${
+                className={`flex items-center justify-between rounded-md px-5 py-1 text-left font-sans ${
                   selection === "week"
                     ? "bg-gray-800 text-green-300"
                     : "text-gray-800"

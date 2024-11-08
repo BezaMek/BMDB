@@ -3,15 +3,18 @@ import { useState,useEffect} from "react";
 import Button from "./Button";
 import TrailerCard from "./TrailerCard.jsx"
 import BG from "../assetes/BG.jpeg"
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
  
 export default function Trailer({}) {  
   const [movie, setMovie] = useState(null);
-  const { id } = useParams();
+  const [selection, setSelection] = useState("day");
+  const [bgImg, setBgImg] = useState(BG);  
+  const [isHovered, setIsHovered] = useState(false);
+  // const { id } = useParams();
 
   useEffect(() => {
     fetch(
-      `https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`,
+      `https://api.themoviedb.org/3/trending/movie/${selection}?language=en-US`,
       {
         headers: {
           "Content-Type": "application/json",
@@ -24,17 +27,40 @@ export default function Trailer({}) {
       .then((data) => setMovie(data))
       .catch((err) => console.log(err));
   }, []);
+
+  
+  const handleSelectionClick = (value) => {
+    if (value) {
+      setSelection(value);
+      fetch(
+        `https://api.themoviedb.org/3/trending/movie/${selection}?language=en-US`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzMmE4MGFlNGM1M2JmNTM1ZjY0YzgzZGE4NWQxZDZkNSIsIm5iZiI6MTcyMTkxMTAyNi41MjQ5NTEsInN1YiI6IjY2YTI0NTZkNGM0MmU2ZWQxNzI1YWUyYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.nZmeljUA_PpkWwjFzHNyIwUjxEDCLUpv2OKBSyAMsVo",
+          },
+        }
+      )
+        .then((response) => response.json())
+        .then((data) => setMovie(data.results || []))
+        .catch((err) => console.log(err));
+    }
+
+    // Handle the value as needed
+  };
  
   return (
-    <div className=" "    style={{
-      backgroundImage:`url(${BG})`,
+    <div className="relative transition-all duration-500 ease-in-out"    style={{
+      backgroundImage:`url(${bgImg})`,
       backgroundSize:"cover",
       backgroundRepeat: "no-repeat",
       backgroundPosition:"center",
+      transition: "background-image 0.5s ease-in-out",
   }  
   }>
       
-   <div className="pt-2"> 
+   <div className={`pt-2 ${isHovered ? 'bg-blue-950 opacity-80' : ''} z-0`}> 
     <Button 
     PageName = "Latest Trailers"
      Button1="Popular"
@@ -43,15 +69,30 @@ export default function Trailer({}) {
     ButtonColor="bg-green-500 text-white" 
     ButtonColor1=" text-black"
     PageNameStyle="font-semibold text-2xl text-white"
+    selection={selection}
+    onButtonClick={handleSelectionClick}
     /> 
-   <div
-   className="flex overflow-x-scroll scrollbar-thin scrollbar-thumb-gray-500">  
-{movie?(
-  <div>
-   <TrailerCard Img={"https://media.themoviedb.org/t/p/w355_and_h200_face/"+ movie.poster_path} MovieTitle={movie.name} Season={movie.Season} videoID={movie.key}/>  
-  </div>
+<div className="flex overflow-x-scroll space-x-4 scrollbar-thin scrollbar-thumb-gray-500">
+  {movie && movie.length > 0 ? (
+    movie.map((item, index) => (
+      <div key={index} className="flex-shrink-0"
+      onMouseEnter={()=>{setBgImg(`https://media.themoviedb.org/t/p/w3840_and_h1200_multi_faces/${item.poster_path}`)
+    setIsHovered(true)}}
+      onMouseLeave={()=>{setBgImg(`https://media.themoviedb.org/t/p/w3840_and_h1200_multi_faces/${item.poster_path}`)}}>
+        <TrailerCard 
+          Img={`https://media.themoviedb.org/t/p/w355_and_h200_face/${item.poster_path}`} 
+          MovieTitle={item.title} 
+          Season={item.Season} 
+          videoID={item.id} 
+        />
+      </div>
+    ))
+  ) : (
+    <p className="ml-12 mb-5 text-white text-sm">This panel didn't return any results. Try refreshing it.</p> 
+  )}
+</div>
 
-):(null)}</div>
+
   
 
     </div>

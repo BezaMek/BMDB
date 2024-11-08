@@ -1,6 +1,6 @@
 
 import { useState} from "react";
-export default function MovieMain({ movie }) {
+export default function TvMain({ movie }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [openTrailer, setIsOpenTrailer] = useState(false);
 
@@ -16,29 +16,14 @@ export default function MovieMain({ movie }) {
   const closeModal = () => {
     setIsModalOpen(false);
   };
-  const divStyle = movie && movie.poster_path ? {
-    backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/${movie.poster_path}')`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    padding: "10px",
-  } : {
-    // Default style when poster_path is missing or movie is null
-    backgroundColor: "gray",
-    backgroundImage: "linear-gradient(to bottom, rgba(128, 128, 128, 0.5), rgba(128, 128, 128, 0.5))", // Gray gradient
-    padding: "10px",
-  };
-  
   return (
     <div>
       {movie ? (
-
-        <div className="h-auto md:p-10 md:flex" style={divStyle}>
-               {/* <div className="absolute inset-0 bg-[rgba(0,0,0,0.5)]"></div> */}
+        <div className="bg-gray-500 h-auto md:p-10 md:flex">
           <div
             className="relative  sm:w-full md:max-w-96 w-full h-full  rounded-xl sm:hover:contrast-50 transition duration-300"
             onClick={openModal}
           >
-        
             <img
               src={
                 "https://media.themoviedb.org/t/p/w300_and_h450_face/" +

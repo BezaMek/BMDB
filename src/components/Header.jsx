@@ -48,14 +48,14 @@ setOneVisible(!oneVisible);
     <Link to="/">
       <div className="flex items-center space-x-2">
     
-      <a href="/" className="text-blue-500 text-2xl font-bold">TMDB</a>
+      <a href="/" className="text-blue-500 text-2xl font-bold font-sans">TMDB</a>
     <div className="w-16 h-5 border-2 border-blue-500 bg-blue-500  rounded-full"></div>
    
      </div>
      </Link>
     <div className="flex pl-10 space-x-5">
 <div className="relative group">
-    <span className="text-white font-semibold">Movies</span>
+    <span className="text-white font-semibold text-sm font-sans">Movies</span>
     <div className="absolute w-32 bg-white text-center text-black rounded-sm shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50">
     <div className="flex flex-col mt-2 mb-2 z-50">
     <span className="py-1 px-2 hover:bg-gray-200">Test Test</span>
@@ -66,7 +66,7 @@ setOneVisible(!oneVisible);
     </div>
     </div>
     <div className="relative group">
-    <span className="text-white font-semibold">Popular</span>
+    <span className="text-white font-semibold text-sm font-sans">Popular</span>
     <div className="absolute w-32 bg-white text-center text-black rounded-sm shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50">
     <div className="flex flex-col mt-2 mb-2">
     <span className="py-1 px-2 hover:bg-gray-200">Test Test</span>
@@ -77,7 +77,7 @@ setOneVisible(!oneVisible);
     </div>
     </div>
     <div className="relative group">
-    <span className="text-white font-semibold">TV shows</span>
+    <span className="text-white font-semibold text-sm font-sans">TV shows</span>
     <div className="absolute w-32 bg-white text-center text-black rounded-sm shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50">
     <div className="flex flex-col mt-2 mb-2">
     <span className="py-1 px-2 hover:bg-gray-200">Test Test</span>
@@ -88,7 +88,7 @@ setOneVisible(!oneVisible);
     </div>
     </div>
     <div className="relative group">
-    <span className="text-white font-semibold">People</span>
+    <span className="text-white font-semibold text-sm font-sans">People</span>
     <div className="absolute w-32 bg-white text-center text-black rounded-sm shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50">
     <div className="flex flex-col mt-2 mb-2">
     <span className="py-1 px-2 hover:bg-gray-200">Test Test</span>
@@ -141,7 +141,7 @@ setOneVisible(!oneVisible);
 <Link to="/Login">
  
  
- <a href="/" className="font-medium text-lg text-white">Login</a>
+ <a href="/" className="font-semibold text-white text-sm font-sans">Login</a>
  
 </Link>
     <div className="w-full m-0">
@@ -178,7 +178,7 @@ setOneVisible(!oneVisible);
 <Link to="/Login">
  
  
- <a href="/" className="text-white font-semibold text-lg">Login</a>
+ <a href="/" className="text-white font-semibold text-sm">Login</a>
  
 </Link>
 <Search/>

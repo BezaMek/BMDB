@@ -54,7 +54,7 @@ export default function Trending() {
         ButtonProperties="flex gap-1 border border-black rounded-full font-medium"
         ButtonColor="bg-black text-green-400"
         ButtonColor1="bg-white text-black"
-        PageNameStyle="font-semibold text-2xl"
+        PageNameStyle="font-semibold text-2xl font-sans"
         selection={selection}
         onButtonClick={handleSelectionClick}
       />

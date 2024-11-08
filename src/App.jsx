@@ -14,6 +14,8 @@ import JoinToday from "./components/JoinToday.jsx";
 
 import SearchPage from "./components/SearchPage.jsx";
 import SignUp from "./components/SignUp.jsx";
+import Trailer from "./components/Trailer.jsx";
+import TvDetail from "./components/Tv/Tv_detail.jsx";
 import "./App.css";
 
 export default function App() {
@@ -30,7 +32,7 @@ export default function App() {
           <Welcome />
 
           <Trending />
-          {/* <Trailer/>  */}
+          <Trailer />
           <Popular />
           <JoinToday />
           <LeaderBord />
@@ -47,19 +49,19 @@ export default function App() {
       element: <SignUp />,
     },
     {
-      path: `/${selected}/:id`,
+      path: `/movie/:id`,
       element: (
         <MovieDetail
-          selected={selected === "movie"}
+          selected="movie"
           onClick={() => handleClick("movie")}
         />
       ),
     },
     {
-      path: `/${selected}/:id`,
+      path: `/tv/:id`,
       element: (
-        <MovieDetail
-          selected={selected === "tv"}
+        <TvDetail
+          selected ="tv"
           onClick={() => handleClick("tv")}
         />
       ),

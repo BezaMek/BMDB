@@ -1,12 +1,11 @@
+import TvHeader from "../Movie/MovieHeader.jsx";
 import Header from "../Header.jsx";
-import MovieHeader from "./MovieHeader.jsx";
-import MovieMain from "./MovieMain.jsx";
-import MovieCast from "./MovieCast.jsx";
 import Footer from "../Footer.jsx";
-import { useParams } from "react-router-dom";
+import TvMain from "./Tv_main.jsx";
 import { useState, useEffect } from "react";
-
-export default function MovieDetail({ selected }) {
+import { useParams } from "react-router-dom";
+import TvCast from "./Tv_cast.jsx";
+export default function Tv({selected}) {
   const [movie, setMovie] = useState(null);
 
   const { id } = useParams();
@@ -26,15 +25,12 @@ export default function MovieDetail({ selected }) {
       .then((data) => setMovie(data || null))
       .catch((err) => console.log(err));
   }, [id]);
-  // console.log(movie.credits);
   return (
     <div>
       <Header />
-      <MovieHeader />
-      <MovieMain movie={movie} />
-
-      <MovieCast movie={movie} />
-
+      <TvHeader />
+      <TvMain movie={movie} />
+      <TvCast movie={movie} />
       <Footer />
     </div>
   );
