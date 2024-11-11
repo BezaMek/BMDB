@@ -48,7 +48,7 @@ export default function TrailerCard({ Img, MovieTitle, Season, videoID, selected
         </div>
       </div>
 
-      {isModalOpen == true && (
+      {isModalOpen === true && (
      <VideoModal videoID={videoID} closeModal={closeModal} selected={selected}/>
       )}
     </div>

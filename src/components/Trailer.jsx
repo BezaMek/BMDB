@@ -3,16 +3,17 @@ import { useState,useEffect} from "react";
 import Button from "./Button";
 import TrailerCard from "./TrailerCard.jsx"
 import BG from "../assetes/BG.jpeg"
-// import { useParams } from "react-router-dom";
+
  
 export default function Trailer({selected}) {  
   const [movie, setMovie] = useState(null);
   const [selection, setSelection] = useState("day");
   const [bgImg, setBgImg] = useState(BG);  
   const [isHovered, setIsHovered] = useState(false);
-  // const { id } = useParams();
+
 
   useEffect(() => {
+    if (selection) {
     fetch(
       `https://api.themoviedb.org/3/trending/movie/${selection}?language=en-US`,
       {
@@ -26,6 +27,7 @@ export default function Trailer({selected}) {
       .then((response) => response.json())
       .then((data) => setMovie(data))
       .catch((err) => console.log(err));
+  }
   }, []);
 
   
@@ -42,10 +44,13 @@ export default function Trailer({selected}) {
           },
         }
       )
+
         .then((response) => response.json())
         .then((data) => setMovie(data.results || []))
         .catch((err) => console.log(err));
+        
     }
+    
 
     // Handle the value as needed
   };

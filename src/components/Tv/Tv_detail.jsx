@@ -24,7 +24,7 @@ export default function Tv({selected}) {
       .then((response) => response.json())
       .then((data) => setMovie(data || null))
       .catch((err) => console.log(err));
-  }, [id]);
+  }, [id,selected]);
   return (
     <div>
       {movie?(<div><Header />

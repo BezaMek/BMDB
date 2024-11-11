@@ -156,7 +156,7 @@ export default function MovieMain({ movie, selected }) {
                 </span>
               </div>
 
-              {openTrailer == true&&(
+              {openTrailer === true&&(
                  <VideoModal videoID={movie.id} closeModal={closeTrailer} selected={selected}/>
               )}
                 {/* {isModalOpen == true && (

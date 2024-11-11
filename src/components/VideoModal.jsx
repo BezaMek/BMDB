@@ -16,7 +16,7 @@ export default function VideoModal({videoID, closeModal,selected}){
       .then((response) => response.json())
       .then((data) => setYoutubeVideoId(data.results[0].key))
       .catch((err) => console.log(err));
-  }, []);
+  }, [selected,videoID]);
 
     return(
         <div>

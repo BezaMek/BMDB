@@ -1,15 +1,8 @@
-import tmdbLogo from "../assetes/tmdb.png";
-
-import Blue from "../assetes/Blue.jpg";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 export default function Welcome() {
   const [newRandomImg, setNewRandomImg] = useState(null);
-  //  const images = [tmdbLogo, Blue];
-  // if (images && images.length > 0) {
-  //   const randomImage = images[Math.floor(Math.random() * images.length)];
-  //   setNewRandomImg(randomImage);
-  // }
+  
   useEffect(() => {
     fetch(`https://api.themoviedb.org/3/movie/popular?language=en-US&page=1'`, {
       headers: {

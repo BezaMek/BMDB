@@ -152,7 +152,7 @@ export default function TvMain({ movie,selected }) {
               </div>
 
           
-            {openTrailer == true&&(
+            {openTrailer === true&&(
               <VideoModal videoID={movie.id} closeModal={closeTrailer} selected={selected}/>
            )}
               
