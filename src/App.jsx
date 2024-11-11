@@ -20,6 +20,7 @@ import "./App.css";
 
 export default function App() {
   const [selected, setSelected] = useState("movie");
+  
   const handleClick = (type) => {
     setSelected(type);
   };
@@ -32,7 +33,11 @@ export default function App() {
           <Welcome />
 
           <Trending />
-          <Trailer />
+          <Trailer 
+             selected={`${selected}`} 
+             onClick={() => handleClick("movie")}
+           
+             />
           <Popular />
           <JoinToday />
           <LeaderBord />
@@ -40,6 +45,24 @@ export default function App() {
         </>
       ),
     },
+    // {
+    //   path: `/`,
+    //   element: (
+    //     <Trailer
+    //     selected="movie"
+    //       onClick={() => handleClick("movie")}
+    //     />
+    //   ),
+    // },
+    // {
+    //   path: `/`,
+    //   element: (
+    //     <Trailer
+    //     selected="tv"
+    //       onClick={() => handleClick("tv")}
+    //     />
+    //   ),
+    // },
     {
       path: "Login",
       element: <Login />,
@@ -52,7 +75,7 @@ export default function App() {
       path: `/movie/:id`,
       element: (
         <MovieDetail
-          selected="movie"
+        selected="movie"
           onClick={() => handleClick("movie")}
         />
       ),

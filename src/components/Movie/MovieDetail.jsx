@@ -9,9 +9,11 @@ import { useState, useEffect } from "react";
 export default function MovieDetail({ selected }) {
   const [movie, setMovie] = useState(null);
 
+
   const { id } = useParams();
 
   useEffect(() => {
+    
     fetch(
       `https://api.themoviedb.org/3/${selected}/${id}?append_to_response=credits&language=en-US`,
       {
@@ -25,17 +27,46 @@ export default function MovieDetail({ selected }) {
       .then((response) => response.json())
       .then((data) => setMovie(data || null))
       .catch((err) => console.log(err));
-  }, [id]);
+    
+  }, 
+  [id]);
   // console.log(movie.credits);
   return (
-    <div>
-      <Header />
+ 
+  
+        <div>
+           {movie?(
+            <div>
+            <Header />
       <MovieHeader />
-      <MovieMain movie={movie} />
+      <MovieMain movie={movie} selected={selected}/>
 
       <MovieCast movie={movie} />
 
       <Footer />
+
+    </div>
+   ):(      <div className="w-full h-full bg-gray-200 rounded-lg overflow-hidden relative">
+    <div className="absolute inset-0 bg-gradient-to-r from-gray-300 via-gray-100 to-gray-300 animate-pulse opacity-75"></div>
+    <div className="relative z-10 p-4">
+      
+      <div className="w-full h-8 bg-gray-300 rounded mb-4"></div>
+      <div className="w-full h-80 bg-gray-300 rounded">
+      <div className="w-52 h-80  bg-gray-400 rounded"></div>
+ 
+      </div>
+      <div className="flex space-x-20 w-full bg-gray-300 mt-5 rounded">
+      <div className="w-40 h-64 bg-gray-400 rounded"></div>
+      <div className="w-40 h-64 bg-gray-400 rounded pl-5"></div>
+      <div className="w-40 h-64 bg-gray-400 rounded pl-5"></div>
+      <div className="w-40 h-64 bg-gray-400 rounded pl-5"></div>
+      </div>
+      <div className="w-full h-44 bg-gray-300 rounded mt-5"></div>
+    </div>
+      </div>
+      )} 
+
+     
     </div>
   );
 }

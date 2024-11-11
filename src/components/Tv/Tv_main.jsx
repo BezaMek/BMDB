@@ -1,6 +1,7 @@
 
 import { useState} from "react";
-export default function TvMain({ movie }) {
+import VideoModal from "../VideoModal";
+export default function TvMain({ movie,selected }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [openTrailer, setIsOpenTrailer] = useState(false);
 
@@ -16,10 +17,21 @@ export default function TvMain({ movie }) {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+  const divStyle = movie && movie.poster_path ? {
+    backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/${movie.poster_path}')`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    padding: "10px",
+  } : {
+    // Default style when poster_path is missing or movie is null
+    backgroundColor: "gray",
+    backgroundImage: "linear-gradient(to bottom, rgba(128, 128, 128, 0.5), rgba(128, 128, 128, 0.5))", // Gray gradient
+    padding: "10px",
+  };
   return (
     <div>
       {movie ? (
-        <div className="bg-gray-500 h-auto md:p-10 md:flex">
+        <div className="bg-gray-500 h-auto md:p-10 md:flex" style={divStyle}>
           <div
             className="relative  sm:w-full md:max-w-96 w-full h-full  rounded-xl sm:hover:contrast-50 transition duration-300"
             onClick={openModal}
@@ -139,30 +151,11 @@ export default function TvMain({ movie }) {
                 </span>
               </div>
 
-              {openTrailer && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-                  <div className="bg-white rounded-lg overflow-hidden shadow-lg max-w-md w-full">
-                    <div className="relative">
-                      <button
-                        onClick={closeTrailer}
-                        className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
-                      >
-                        &times;
-                      </button>
-
-                      <iframe
-                        width="100%"
-                        height="315"
-                        src={`https://www.youtube.com/embed/tgbNymZ7vqY`}
-                        title="YouTube video player"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      ></iframe>
-                    </div>
-                  </div>
-                </div>
-              )}
+          
+            {openTrailer == true&&(
+              <VideoModal videoID={movie.id} closeModal={closeTrailer} selected={selected}/>
+           )}
+              
                {isModalOpen && (
         <div className="fixed hidden md:flex inset-0 bg-black bg-opacity-50 items-center justify-center z-50">
           <div className="bg-white rounded-lg overflow-hidden shadow-lg max-w-lg w-full">
@@ -259,7 +252,10 @@ export default function TvMain({ movie }) {
           </div>
         </div>
       ) : (
-        <div>Loading</div>
+        <div>
+     
+      </div>
+      
       )}
 
      

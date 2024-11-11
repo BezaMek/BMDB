@@ -5,7 +5,7 @@ import TrailerCard from "./TrailerCard.jsx"
 import BG from "../assetes/BG.jpeg"
 // import { useParams } from "react-router-dom";
  
-export default function Trailer({}) {  
+export default function Trailer({selected}) {  
   const [movie, setMovie] = useState(null);
   const [selection, setSelection] = useState("day");
   const [bgImg, setBgImg] = useState(BG);  
@@ -60,7 +60,7 @@ export default function Trailer({}) {
   }  
   }>
       
-   <div className={`pt-2 ${isHovered ? 'bg-blue-950 opacity-80' : ''} z-0`}> 
+   <div className={`pt-2 ${isHovered ? 'bg-blue-950 opacity-80' : ''}`}> 
     <Button 
     PageName = "Latest Trailers"
      Button1="Popular"
@@ -84,6 +84,7 @@ export default function Trailer({}) {
           MovieTitle={item.title} 
           Season={item.Season} 
           videoID={item.id} 
+          selected={selected}
         />
       </div>
     ))

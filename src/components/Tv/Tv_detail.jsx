@@ -27,11 +27,32 @@ export default function Tv({selected}) {
   }, [id]);
   return (
     <div>
-      <Header />
+      {movie?(<div><Header />
       <TvHeader />
-      <TvMain movie={movie} />
+      <TvMain movie={movie} selected={selected}/>
       <TvCast movie={movie} />
-      <Footer />
+      <Footer /></div>):(
+
+<div className="w-full h-full bg-gray-200 rounded-lg overflow-hidden relative">
+<div className="absolute inset-0 bg-gradient-to-r from-gray-300 via-gray-100 to-gray-300 animate-pulse opacity-75"></div>
+<div className="relative z-10 p-4">
+  
+  <div className="w-full h-8 bg-gray-300 rounded mb-4"></div>
+  <div className="w-full h-80 bg-gray-300 rounded">
+  <div className="w-52 h-80  bg-gray-400 rounded"></div>
+
+  </div>
+  <div className="flex space-x-20 w-full bg-gray-300 mt-5 rounded">
+  <div className="w-40 h-64 bg-gray-400 rounded"></div>
+  <div className="w-40 h-64 bg-gray-400 rounded pl-5"></div>
+  <div className="w-40 h-64 bg-gray-400 rounded pl-5"></div>
+  <div className="w-40 h-64 bg-gray-400 rounded pl-5"></div>
+  </div>
+  <div className="w-full h-44 bg-gray-300 rounded mt-5"></div>
+</div>
+  </div>
+      )}
+      
     </div>
   );
 }

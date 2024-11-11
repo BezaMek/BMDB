@@ -1,10 +1,10 @@
 import { useState,useEffect } from "react";
-export default function VideoModal({videoID, closeModal}){
+export default function VideoModal({videoID, closeModal,selected}){
     const [youtubeVideoId, setYoutubeVideoId] = useState(null);
     
   useEffect(() => {
     fetch(
-      `https://api.themoviedb.org/3/movie/${videoID}/videos?language=en-US`,
+      `https://api.themoviedb.org/3/${selected}/${videoID}/videos?language=en-US`,
       {
         headers: {
           "Content-Type": "application/json",

@@ -39,7 +39,7 @@ export default function TvCast({ movie}) {
     )}
   </>
 ) : (
-  <h1>Loading</h1>
+  <div></div>
 )}
 
 

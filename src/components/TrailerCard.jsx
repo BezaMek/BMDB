@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import VideoModal from "./VideoModal";
 
-export default function TrailerCard({ Img, MovieTitle, Season, videoID }) {
+export default function TrailerCard({ Img, MovieTitle, Season, videoID, selected }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
 
@@ -14,7 +14,7 @@ export default function TrailerCard({ Img, MovieTitle, Season, videoID }) {
 
   return (
     <div>
-      <div onClick={openModal} className="flex relative ml-10 mt-5 z-50">
+      <div onClick={openModal} className="flex relative ml-10 mt-5 ">
         <div className="flex flex-col">
           <div className="flex items-center justify-center hover:scale-110 hover:rounded-lg">
             <div className="w-72 h-44 flex  rounded-lg shadow-lg">
@@ -49,7 +49,7 @@ export default function TrailerCard({ Img, MovieTitle, Season, videoID }) {
       </div>
 
       {isModalOpen == true && (
-     <VideoModal videoID={videoID} closeModal={closeModal}/>
+     <VideoModal videoID={videoID} closeModal={closeModal} selected={selected}/>
       )}
     </div>
   );

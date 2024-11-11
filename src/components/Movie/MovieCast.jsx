@@ -69,7 +69,7 @@ export default function MovieCast({ movie}) {
     )}
   </>
 ) : (
-  <h1>Loading</h1>
+  <div></div>
 )}
 
 
