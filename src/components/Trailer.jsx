@@ -28,7 +28,7 @@ export default function Trailer({selected}) {
       .then((data) => setMovie(data))
       .catch((err) => console.log(err));
   }
-  }, []);
+  }, [selection]);
 
   
   const handleSelectionClick = (value) => {

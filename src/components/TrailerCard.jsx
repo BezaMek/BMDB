@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import VideoModal from "./VideoModal";
 
 export default function TrailerCard({ Img, MovieTitle, Season, videoID, selected }) {

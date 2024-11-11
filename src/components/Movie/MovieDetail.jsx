@@ -29,7 +29,7 @@ export default function MovieDetail({ selected }) {
       .catch((err) => console.log(err));
     
   }, 
-  [id]);
+  [id,selected]);
   // console.log(movie.credits);
   return (
  
