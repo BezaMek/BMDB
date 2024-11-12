@@ -13,8 +13,6 @@ export default function Trailer({selected}) {
 
 
   useEffect(() => {
-     console.log('Selection changed:', selection);
-    if (selection) {
     fetch(
       `https://api.themoviedb.org/3/trending/movie/${selection}?language=en-US`,
       {
@@ -26,10 +24,10 @@ export default function Trailer({selected}) {
       }
     )
       .then((response) => response.json())
-      .then((data) => setMovie(data)||[])
+      .then((data) => setMovie(data.results || []))
       .catch((err) => console.log(err));
-  }
-  }, []);
+  }, [selection]);
+
 
 
   const handleSelectionClick = (value) => {
